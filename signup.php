@@ -14,7 +14,7 @@ if(isset($_POST['submit'])) {
     $result = mysqli_query($conn, $select);
 
     if(mysqli_num_rows($result) > 0) {
-        $error[] = 'User already exists!';
+        $error[] = 'User already exists! kindly Login';
     } else {
         if($pass != $cpass) {
             $error[] = 'Password and confirm password do not match!';
@@ -94,10 +94,10 @@ if(isset($_POST['submit'])) {
             </form>
             <div class="social-login">
                 <p>Or sign up with:</p>
-                <div class="social-icons">
-                    <button class="social-btn"><i class="fab fa-google"></i></button>
-                    <button class="social-btn"><i class="fab fa-facebook-f"></i></button>
-                    <button class="social-btn"><i class="fab fa-twitter"></i></button>
+                <div class="social-iconz">
+                    <button class="socia-btn"><i class="fab fa-google"></i></button>
+                    <button class="socia-btn"><i class="fab fa-facebook-f"></i></button>
+                    <button class="socia-btn"><i class="fab fa-twitter"></i></button>
                 </div>
             </div>
             <a href="signin.php" class="toggle-text">Already have an account? Log In</a>

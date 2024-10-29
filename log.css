@@ -35,7 +35,7 @@ body {
 }
 
 .welcome-panel, .form-panel {
-    padding: 40px;
+    padding: 25px;
 }
 
 .welcome-panel {
@@ -74,7 +74,7 @@ body {
 
 .welcome-panel h2 {
     font-size: 2.5em;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     position: relative;
     z-index: 2;
     text-shadow: 0 10px 10px rgb(0, 0, 0);
@@ -89,7 +89,7 @@ body {
 
 .form-panel h2 {
     color: var(--primary-color);
-    margin-bottom: 25px;
+    margin-bottom: 15px;
     text-align: center;
     font-size: 2em;
     text-shadow: 0 3px 1px rgba(0, 0, 0, 0.979);
@@ -103,7 +103,7 @@ form {
 
 .input-group {
     position: relative;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .input-group i:not(.toggle-password) {
@@ -142,7 +142,7 @@ form {
     top: 50%;
     transform: translateY(-50%);
     cursor: pointer;
-    color: var(--primary-color);
+    color: orangered;
     font-size: 1.2em;
 }
 
@@ -166,21 +166,21 @@ form {
 
 .social-login {
     text-align: center;
-    margin-top: 25px;
+    margin-top: 20px;
 }
 
 .social-login p {
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     color: rgba(255,255,255,0.8);
 }
 
-.social-icons {
+.social-iconz {
     display: flex;
     justify-content: center;
 }
 
-.social-btn {
-    background-color: rgba(255,255,255,0.1);
+.socia-btn {
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
     border: none;
     border-radius: 50%;
     width: 50px;
@@ -193,12 +193,12 @@ form {
     transition: all 0.3s ease;
 }
 
-.social-btn:hover {
+.socia-btn:hover {
     background-color: var(--primary-color);
     transform: translateY(-3px);
 }
 
-.social-btn i {
+.socia-btn i {
     color: var(--text-color);
     font-size: 1.5em;
 }
@@ -242,10 +242,12 @@ form {
 
  .error-msg {
     margin: 10px 0;
+    text-align: center;
     display: block;
     background: crimson;
     color: #fff;
     border-radius: 5px;
-    font-size: 20px;
-    padding: 10px;
+    font-size: 16px;
+    padding: 5px;
 }
+

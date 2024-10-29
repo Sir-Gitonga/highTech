@@ -36,12 +36,12 @@
     </div>
     <header id="main-header"> 
         <div class="logo">
-            <img src="logo.png" alt="Gitonga Tech Studio">
+            <a href="index.php"><img src="logo.png" alt="Gitonga Tech Studio"></a>
         </div>
         <h2>HighTech Quantum</h2>
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
+                <li><a href="index.php">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="services.html">Services</a></li>
                 <li><a href="portfolio.html">Portfolio</a></li>
@@ -618,7 +618,7 @@
     <div class="container">
         <div class="footer-content">
             <div class="footer-logo">
-                <img src="logo.png.jpg" alt="HighTech QuantumLogo">
+                <a href="index.php"><img src="logo.png.jpg" alt="HighTech QuantumLogo"></a>
                 <p>Innovating for a better tomorrow</p>
             </div>
             <div class="footer-links">

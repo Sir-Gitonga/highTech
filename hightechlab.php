@@ -9,6 +9,27 @@ if (!isset( $_SESSION['user_name'])) {
 }
 
 
+// Get user's full name from the database
+$username = $_SESSION['user_name'];
+$query = "SELECT fullName FROM hightech WHERE username = ?";
+$stmt = mysqli_prepare($conn, $query);
+mysqli_stmt_bind_param($stmt, "s", $username);
+mysqli_stmt_execute($stmt);
+$result = mysqli_stmt_get_result($stmt);
+$user = mysqli_fetch_assoc($result);
+
+// Generate initials from full name
+function getInitials($fullName) {
+    $words = explode(" ", $fullName);
+    $initials = "";
+    foreach ($words as $word) {
+        $initials .= strtoupper(substr($word, 0, 1));
+    }
+    return $initials;
+}
+
+$userInitials = isset($user['fullName']) ? getInitials($user['fullName']) : '';
+
 ?>
 
 
@@ -27,27 +48,31 @@ if (!isset( $_SESSION['user_name'])) {
         <div class="hamburger">&#9776;</div>
         <div class="header-title">iTech SkilLab / <span id="current-page">Home</span></div>
         <nav class="header-nav">
-            <i class="fas fa-envelope"></i>
-            <i class="fas fa-bell"></i>
-            <div class="user-greeting">Hello,<span><?php echo htmlspecialchars( $_SESSION['user_name']); ?></span></div>
-            <div class="user-dropdown">
-                <i class="fas fa-user"></i>
+        <a href ="dashboard.php"><div class="user-initials"><?php echo htmlspecialchars($userInitials); ?></div></a>
+            <div class="user-profile">
+                <div class="user-greeting">
+                  <span><?php echo htmlspecialchars($_SESSION['user_name']); ?></span>
+                    <i class="fas fa-chevron-down dropdown-arrow"></i>
+                </div>
                 <div class="user-dropdown-content">
-                    <a href="#">Edit Profile</a>
-                    <a href="#">Messages</a>
-                    <a href="#">Notifications</a>
-                    <a href="#">Logout</a>
+                    <a href="dashboard.php"><i class="fas fa-user-circle"></i> My Dashboard</a>
+                    <a href="#"><i class="fas fa-cog"></i> Settings</a>
+                    <a href="#"><i class="fas fa-folder"></i> My Projects</a>
+                    <a href="#"><i class="fas fa-history"></i> Activity Log</a>
+                    <a href="logout.php"><i class="fas fa-power-off"></i> Logout</a>
                 </div>
             </div>
+            <i class="fas fa-envelope"></i>
+            <i class="fas fa-bell"></i>
         </nav>
         <div class="userR">
-        <i class="fas fa-user"></i>
+        <a href ="dashboard.php"><div class="user-initials"><?php echo htmlspecialchars($userInitials); ?></div></a>
         </div>
         <div class="three-dot-menu">&#8942;</div>
         <div class="mobile-dropdown">
             <a href="#"><i class="fas fa-envelope"></i> Messages</a>
             <a href="#"><i class="fas fa-bell"></i> Notifications</a>
-            <a href="#"><i class="fas fa-user"></i> Profile</a>
+            <a href="dashboard.php"><i class="fas fa-user-circle"></i> Dashboard</a>
             <hr>
             <a href="#"><i class="fas fa-power-off"></i> Logout</a>
 
@@ -87,29 +112,157 @@ if (!isset( $_SESSION['user_name'])) {
 
    
     <main class="main-content">
-        <section id="home" class="section active">
-            <h1>Welcome to HighTech Lab</h1>
-            <p>Explore the future of technology and innovation in our state-of-the-art digital laboratory. HighTech Lab is your gateway to cutting-edge research, learning, and development in the world of technology.</p>
-            <div class="card-grid">
-                <div class="card">
-                    <i class="fas fa-microscope"></i>
-                    <h3>Advanced Research</h3>
-                    <p>Access cutting-edge technology and research facilities.</p>
+         <section id="home" class="section active">
+            <div style="margin: 0; padding: 0; box-sizing: border-box;">
+                <div class="hero-container">
+                <div class="hero-left">
+                    <h1 class="welcome-text">Welcome <span class="highlight"><?php echo htmlspecialchars($_SESSION['user_name']); ?></span></h1>
+                    <p class="tagline">Easy Learning</p>
+                    <p class="subtitle">Transform your future through innovative tech education</p>
+                    
+                    <div class="quick-links">
+                    <a href="#videos" class="link-item">View your videos</a>
+                    <span class="link-separator">|</span>
+                    <a href="#certifications" class="link-item">Certifications</a>
+                    <span class="link-separator">|</span>
+                    <a href="#tutorials" class="link-item">Tutorials</a>
+                    </div>
                 </div>
-                <div class="card">
-                    <i class="fas fa-chalkboard-teacher"></i>
-                    <h3>Expert-Led Courses</h3>
-                    <p>Learn from industry professionals and academic experts.</p>
+                
+                <div class="hero-right">
+                    <div class="image-container">
+                    <img src="chairman.jpg" alt="Tech Innovation" class="hero-image">
+                    </div>
                 </div>
-                <div class="card">
-                    <i class="fas fa-users"></i>
-                    <h3>Collaborative Environment</h3>
-                    <p>Connect with like-minded innovators and work on projects together.</p>
                 </div>
-                <div class="card">
-                    <i class="fas fa-rocket"></i>
-                    <h3>Startup Incubator</h3>
-                    <p>Turn your tech ideas into reality with our startup support.</p>
+            
+                <div class="container">
+                <div class="stats-bar">
+                    <div class="stat-item">
+                        <div class="stat-content">
+                            <span class="stat-number">50+</span>
+                            <span class="stat-label">Expert Mentors</span>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-content">
+                            <span class="stat-number">1000+</span>
+                            <span class="stat-label">Success Stories</span>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-content">
+                            <span class="stat-number">24/7</span>
+                            <span class="stat-label">Lab Access</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-microscope fa-2x"></i>
+                    </div>
+                    <h3>Cutting-Edge Research Lab</h3>
+                    <p>Access state-of-the-art equipment and facilities for breakthrough research in AI, quantum computing, and more.</p>
+                    <ul class="feature-highlights">
+                        <li><i class="fas fa-check"></i> Advanced AI Computing Clusters</li>
+                        <li><i class="fas fa-check"></i> Quantum Simulation Tools</li>
+                        <li><i class="fas fa-check"></i> Real-time Data Analytics</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chalkboard-teacher fa-2x"></i>
+                    </div>
+                    <h3>Industry-Led Learning</h3>
+                    <p>Learn directly from tech giants and industry veterans through our specialized mentorship programs.</p>
+                    <ul class="feature-highlights">
+                        <li><i class="fas fa-check"></i> 1-on-1 Expert Mentoring</li>
+                        <li><i class="fas fa-check"></i> Live Industry Projects</li>
+                        <li><i class="fas fa-check"></i> Career Guidance</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-users fa-2x"></i>
+                    </div>
+                    <h3>Innovation Hub</h3>
+                    <p>Join a vibrant community of tech enthusiasts, entrepreneurs, and innovators shaping the future.</p>
+                    <ul class="feature-highlights">
+                        <li><i class="fas fa-check"></i> Networking Events</li>
+                        <li><i class="fas fa-check"></i> Hackathons</li>
+                        <li><i class="fas fa-check"></i> Tech Meetups</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-rocket fa-2x"></i>
+                    </div>
+                    <h3>Startup Accelerator</h3>
+                    <p>Transform your innovative ideas into successful tech startups with our comprehensive support system.</p>
+                    <ul class="feature-highlights">
+                        <li><i class="fas fa-check"></i> Funding Opportunities</li>
+                        <li><i class="fas fa-check"></i> Business Mentoring</li>
+                        <li><i class="fas fa-check"></i> Market Access</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="upcoming-events">
+                <h2>Upcoming at HighTech Lab</h2>
+                <div class="event-cards">
+                    <div class="event-card">
+                        <div class="event-date">
+                            <span class="day">15</span>
+                            <span class="month">NOV</span>
+                        </div>
+                        <div class="event-details">
+                            <h4>AI Innovation Summit</h4>
+                            <p>Join leading AI researchers and practitioners for a day of insights and networking.</p>
+                            <a href="#" class="event-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="event-card">
+                        <div class="event-date">
+                            <span class="day">22</span>
+                            <span class="month">NOV</span>
+                        </div>
+                        <div class="event-details">
+                            <h4>Blockchain Hackathon</h4>
+                            <p>48 hours of coding, innovation, and prizes worth $10,000.</p>
+                            <a href="#" class="event-link">Register Now <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="success-stories">
+                <h2>Success Stories</h2>
+                <div class="stories-carousel">
+                    <div class="story-card">
+                        <img src="/api/placeholder/80/80" alt="Sarah Chen" class="story-image">
+                        <blockquote>"HighTech Lab transformed my career. Their AI program helped me land my dream job at Google."</blockquote>
+                        <cite>- Sarah Chen, AI Engineer at Google</cite>
+                    </div>
+                    <div class="story-card">
+                        <img src="bp." alt="Mark Rodriguez" class="story-image">
+                        <blockquote>"From idea to successful startup in 8 months. The mentorship and resources here are unmatched."</blockquote>
+                        <cite>- Mark Rodriguez, Founder of TechFlow</cite>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cta-section">
+                <h2>Ready to Begin Your Tech Journey?</h2>
+                <p>Join thousands of innovators who are shaping the future of technology.</p>
+                <div class="cta-buttons">
+                    <a href="#" class="primary-cta">Start Free Trial</a>
+                    <a href="#" class="secondary-cta">Schedule a Tour</a>
                 </div>
             </div>
         </section>
@@ -303,7 +456,7 @@ if (!isset( $_SESSION['user_name'])) {
         <section id="my-lab" class="section">
             <div class="lab-content not-logged-in">
                 <div class="welcome-container">
-                    <h1 class="welcome-heading">Welcome to Your <span class="highlight">Future Lab Space</span></h1>
+                    <h1 class="welcome-heading">Welcome <span><?php echo htmlspecialchars($_SESSION['user_name']); ?>! </span>to Your Future Lab Space</span></h1>
                     <img src="https://lab.waziup.io/static/media/empty-bucket.6a7d1518daf1deda37fe5935bb9e8e31.svg" alt="Empty Bucket">
                     <p class="welcome-text">You currently have no resources in your lab.
                     <br> Sign up to start your personalized tech journey!</p>
@@ -393,5 +546,29 @@ if (!isset( $_SESSION['user_name'])) {
 });
 
    </script>
+   
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const userProfile = document.querySelector('.user-profile');
+    
+    userProfile.addEventListener('click', function(e) {
+        this.classList.toggle('show-dropdown');
+        e.stopPropagation();
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function() {
+        userProfile.classList.remove('show-dropdown');
+    });
+
+    // Prevent dropdown from closing when clicking inside it
+    const dropdownContent = document.querySelector('.user-dropdown-content');
+    dropdownContent.addEventListener('click', function(e) {
+        e.stopPropagation();
+    });
+});
+</script>
 </body>
 </html>

@@ -20,6 +20,8 @@ if(isset($_POST['submit'])) {
         if(password_verify($pass, $row['password'])) {
             $_SESSION['user_id'] = $row['id'];
             $_SESSION['user_name'] = $row['username'];
+            $_SESSION['user_email'] = $row['email'];
+            $_SESSION['user_fullname'] = $row['fullName'];
             
             // Handle "Remember Me" functionality
             if(isset($_POST['rememberMe'])) {
@@ -60,7 +62,7 @@ if(isset($_POST['submit'])) {
     <div class="containers">
         <div class="welcome-panel">
             <h2>Hello, welcome back!</h2>
-            <p>Enter your personal details and start your journey with us</p>
+            <p>Enter your personal details and start your journey <br>with us</p>
         </div>
         <div class="form-panel">
             <h2>Sign In</h2>
@@ -88,10 +90,10 @@ if(isset($_POST['submit'])) {
             <a href="#" class="toggle-text">Forgot Password?</a>
             <div class="social-login">
                 <p>Or sign in with:</p>
-                <div class="social-icons">
-                    <button class="social-btn"><i class="fab fa-google"></i></button>
-                    <button class="social-btn"><i class="fab fa-facebook-f"></i></button>
-                    <button class="social-btn"><i class="fab fa-twitter"></i></button>
+                <div class="social-iconz">
+                    <button class="socia-btn"><i class="fab fa-google"></i></button>
+                    <button class="socia-btn"><i class="fab fa-facebook-f"></i></button>
+                    <button class="socia-btn"><i class="fab fa-twitter"></i></button>
                 </div>
             </div>
             <a href="signup.php" class="toggle-text">Don't have an account? Sign Up</a>
