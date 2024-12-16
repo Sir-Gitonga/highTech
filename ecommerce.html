@@ -11,7 +11,7 @@
  .custom-container {
     position: relative;
     background: linear-gradient(135deg, #00bdf7 0%, #3498db 100%);
-    background-image: url('services.png.jpg'); /* Add your image here */
+    background-image: url('services.pngjpg'); /* Add your image here */
     background-position: center;
     background-size: cover;
     background-blend-mode: overlay;
@@ -20,7 +20,6 @@
     padding: 80px 20px 100px;
     overflow: hidden;
 }
-
 
 .wave-shape {
     position: absolute;
@@ -65,73 +64,78 @@
     color: #ffffff; 
 }
 
-        .modern-services-container {
-            display: flex;
-            justify-content: space-between;
-            width: 100%;
-            padding: 50px 5%;
-            background-color: #f4f7f6;
-        }
+.service-container{
+    background-color: #f4f7f6;
+    padding: 1px;
+}
+.web-design-service-box {
+    max-width: 400px;
+    margin: 2rem auto;
+    position: relative;
+    margin-top: -10px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    padding: 25px;
+    border: 1px solid #00bdf7;
+    transition: all 0.3s ease;
+}
 
-        .modern-service-box {
-            flex: 1;
-            margin: 0 15px;
-            text-align: center;
-            background: white;
-            border: 1px solid #00bdf7;
-            border-radius: 10px;
-            padding: 30px;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
+.web-design-service-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
 
-        .modern-service-box i {
-            color: var(--accent-color);
-            font-size: 3rem;
-            margin-bottom: 10px;
-        }
+.service-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 2px solid rgba(59, 131, 246, 0.719);
+    padding-bottom: 15px;
+}
 
-        .modern-service-box h2 {
-            color: var(--primary-color);
-            margin-bottom: 15px;
-        }
+.service-header i {
+    font-size: 2.5rem;
+    color: orangered;
+    margin-right: 15px;
+}
 
-        .modern-service-box ul {
-            list-style-type: none;
-            padding: 0;
-        }
+.service-header h2 {
+    color: #000000;
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin: 0;
+}
 
-        .modern-service-box ul li {
-            margin: 5px 0;
-            color: #000000;
-            font-weight: bolder;
-        }
+.service-list {
+    list-style-type: none;
+    padding: 0;
+}
 
-        .modern-service-btn {
-            display: inline-block;
-            background: var(--primary-color);
-            color: white;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            margin-top: 20px;
-            transition: background-color 0.3s ease;
-        }
+.service-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    color: #000000;
+    transition: transform 0.2s ease;
+}
 
-        .modern-service-btn:hover {
-            background: var(--secondary-color);
-        }
+.service-list li:hover {
+    transform: translateX(10px);
+}
 
-        @media (max-width: 768px) {
-            .modern-services-container {
-                flex-direction: column;
-                padding: 10px 0;
-            }
+.service-list li i {
+    color: #156eff;
+    margin-right: 12px;
+    font-size: 1.2rem;
+    width: 25px;
+    text-align: center;
+}
 
-            .modern-service-box {
-                margin: 15px 0;
-            }
-        }
+.service-list li span {
+    font-weight: 500;
+}
+
 
         body {
             font-family: 'Poppins', sans-serif;
@@ -168,6 +172,7 @@
             border-radius: 10px;
             box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
+
 
         .service-number {
             font-size: 30px;
@@ -237,7 +242,106 @@
                 font-size: 2rem;
             }
         }
-        
+
+.service-image {
+    flex: 1;
+    text-align: center;
+}
+
+.image-slider {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding-top: 56.25%;
+}
+
+.slide-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slide-item.active {
+    opacity: 1;
+    z-index: 2;
+}
+
+.slide-item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.slide-item .hover-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.slide-item:hover .hover-text {
+    opacity: 1;
+}
+
+.slide-item .hover-text h3 {
+    margin-bottom: 10px;
+    font-size: 1.2em; /* Slightly smaller for better mobile display */
+    font-weight: bold;
+}
+
+.slide-item .hover-text p {
+    font-size: 0.9em; /* Slightly smaller for better mobile display */
+}
+
+/* Additional Media Queries for Responsiveness */
+@media screen and (max-width: 768px) {
+    .service-image {
+        min-height: 200px;
+    }
+
+    .slide-item .hover-text h3 {
+        font-size: 1em;
+    }
+
+    .slide-item .hover-text p {
+        font-size: 0.8em;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .service-image {
+        min-height: 10px;
+    }
+
+    .slide-item .hover-text h3 {
+        font-size: 0.9em;
+    }
+
+    .slide-item .hover-text p {
+        font-size: 0.7em;
+    }
+}
     </style>
 </head>
 <div class="top-bar">
@@ -290,6 +394,7 @@
             <div class="line"></div>
         </div>
     </header> 
+
     <div class="custom-container gradient-background">
         <div class="wave-shape">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
@@ -297,117 +402,104 @@
             </svg>
         </div>
         <div class="services-hero-content">
-            <h1>Our Services</h1>
-            <p>We transform digital challenges into innovative solutions, delivering comprehensive services that drive your business forward with creativity, technology, and strategic expertise.</p>
+            <h1>Graphic Design Services</h1>
+            <p>Creative visual solutions that bring your brand to life and make a lasting impression across all platforms.</p>
+        </div>
+        
+    </div>
+<!-- E-commerce Services Section -->
+<div class="service-container">
+    <div class="web-design-service-box">
+        <div class="service-header">
+            <i class="fas fa-shopping-cart"></i>
+            <h2>E-commerce Solutions</h2>
+        </div>
+        <ul class="service-list">
+            <li>
+                <i class="fas fa-mobile-alt"></i>
+                <span>Mobile-friendly online stores</span>
+            </li>
+            <li>
+                <i class="fas fa-cart-plus"></i>
+                <span>Shopping cart & order tracking</span>
+            </li>
+            <li>
+                <i class="fas fa-credit-card"></i>
+                <span>Payment gateway integration (PayPal, Stripe, M-Pesa)</span>
+            </li>
+            <li>
+                <i class="fas fa-store"></i>
+                <span>Online store setup (Shopify, WooCommerce, Magento)</span>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="services-container">
+    <div class="service-section">
+        <div class="service-content">
+            <div class="service-title">
+                <span class="service-number">01</span>
+                <h2>Mobile-Friendly Online Stores</h2>
+            </div>
+            <div class="service-description">
+                <p>Create responsive, mobile-optimized online stores that provide seamless shopping experiences across all devices. Our mobile-friendly designs ensure your customers can browse, select, and purchase products easily from smartphones, tablets, and desktops.</p>
+            </div>
+            <a href="mobile-stores.html" class="service-btn">Explore Mobile Store Design</a>
+        </div>
+        <div class="service-image">
+            <img src="mobile-store.jpg" alt="Mobile-Friendly Online Stores">
         </div>
     </div>
-    
-    <div class="modern-services-container">
-        <div class="modern-service-box">
-            <i class="fa fa-desktop"></i>
-            <h2>Web Design</h2>
-            <ul>
-                <li>Responsive Websites</li>
-                <li>Custom Web Solutions</li>
-                <li>E-commerce Platforms</li>
-            </ul>
-        </div>
 
-        <div class="modern-service-box">
-            <i class="fa fa-shopping-cart"></i>
-            <h2>E-commerce</h2>
-            <ul>
-                <li>Online Store Setup</li>
-                <li>Payment Integration</li>
-                <li>Store Optimization</li>
-            </ul>
+    <div class="service-section">
+        <div class="service-content">
+            <div class="service-title">
+                <span class="service-number">02</span>
+                <h2>Shopping Cart and Order Tracking</h2>
+            </div>
+            <div class="service-description">
+                <p>Implement advanced shopping cart solutions with comprehensive order tracking capabilities. We develop intuitive cart systems that simplify the purchasing process and provide customers with real-time updates on their orders, enhancing user experience and satisfaction.</p>
+            </div>
+            <a href="cart-tracking.html" class="service-btn">Learn About Order Management</a>
         </div>
-
-        <div class="modern-service-box">
-            <i class="fa fa-paint-brush"></i>
-            <h2>Graphic Design</h2>
-            <ul>
-                <li>Logo Creation</li>
-                <li>Branding</li>
-                <li>Marketing Graphics</li>
-            </ul>
-        </div>
-
-        <div class="modern-service-box">
-            <i class="fa fa-chart-line"></i>
-            <h2>Digital Marketing</h2>
-            <ul>
-                <li>SEO Optimization</li>
-                <li>Social Media Strategy</li>
-                <li>Content Marketing</li>
-            </ul>
+        <div class="service-image">
+            <img src="order-tracking.jpg" alt="Shopping Cart and Order Tracking">
         </div>
     </div>
-    <div class="services-container">
-        <div class="service-section">
-            <div class="service-content">
-                <div class="service-title">
-                    <span class="service-number">01</span>
-                    <h2>Web Design & Development</h2>
-                </div>
-                <div class="service-description">
-                    <p>We craft responsive, cutting-edge websites that not only look stunning but also deliver exceptional user experiences. Our web development solutions range from corporate websites to complex web applications, tailored to meet your unique business needs.</p>
-                </div>
-                <a href="web-design.html" class="service-btn">Discover Our Web Solutions</a>
-            </div>
-            <div class="service-image">
-                <img src="pp.png.jpg" alt="Web Design and Development">
-            </div>
-        </div>
 
-        <div class="service-section">
-            <div class="service-content">
-                <div class="service-title">
-                    <span class="service-number">02</span>
-                    <h2>E-commerce Solutions</h2>
-                </div>
-                <div class="service-description">
-                    <p>Transform your online business with our comprehensive e-commerce solutions. We design and develop robust online stores that are secure, scalable, and optimized for maximum conversion. From payment integration to store design, we've got you covered.</p>
-                </div>
-                <a href="ecommerce.html" class="service-btn">Explore E-commerce Services</a>
+    <div class="service-section">
+        <div class="service-content">
+            <div class="service-title">
+                <span class="service-number">03</span>
+                <h2>Payment Gateway Integration</h2>
             </div>
-            <div class="service-image">
-                <img src="slide.png.jpg" alt="E-commerce Solutions">
+            <div class="service-description">
+                <p>Secure and streamline your online payments with comprehensive payment gateway integration. We support multiple payment methods including PayPal, Stripe, and local options like M-Pesa, ensuring your customers have flexible and secure payment options.</p>
             </div>
+            <a href="payment-gateways.html" class="service-btn">View Payment Solutions</a>
         </div>
-
-        <div class="service-section">
-            <div class="service-content">
-                <div class="service-title">
-                    <span class="service-number">03</span>
-                    <h2>Graphic Design</h2>
-                </div>
-                <div class="service-description">
-                    <p>Our graphic design services breathe life into your brand. We create compelling visual identities, from logo design to comprehensive branding packages that communicate your unique story and captivate your target audience.</p>
-                </div>
-                <a href="graphic-design.html" class="service-btn">View Design Portfolio</a>
-            </div>
-            <div class="service-image">
-                <img src="slide2.jpg" alt="Graphic Design Services">
-            </div>
-        </div>
-
-        <div class="service-section">
-            <div class="service-content">
-                <div class="service-title">
-                    <span class="service-number">04</span>
-                    <h2>Digital Marketing</h2>
-                </div>
-                <div class="service-description">
-                    <p>Elevate your online presence with our strategic digital marketing services. We offer comprehensive solutions including SEO optimization, social media marketing, content strategy, and targeted advertising to help your business thrive in the digital landscape.</p>
-                </div>
-                <a href="digital-marketing.html" class="service-btn">Start Your Marketing Journey</a>
-            </div>
-            <div class="service-image">
-                <img src="slide.png.jpg" alt="Digital Marketing Services">
-            </div>
+        <div class="service-image">
+            <img src="payment-gateway.jpg" alt="Payment Gateway Integration">
         </div>
     </div>
+
+    <div class="service-section">
+        <div class="service-content">
+            <div class="service-title">
+                <span class="service-number">04</span>
+                <h2>Online Store Platform Setup</h2>
+            </div>
+            <div class="service-description">
+                <p>Professional setup and customization of leading e-commerce platforms including Shopify, WooCommerce, and Magento. We help you choose and implement the right platform for your business, ensuring a smooth, professional online selling experience.</p>
+            </div>
+            <a href="store-platforms.html" class="service-btn">Explore E-commerce Platforms</a>
+        </div>
+        <div class="service-image">
+            <img src="ecommerce-platforms.jpg" alt="Online Store Platform Setup">
+        </div>
+    </div>
+</div>
         
 <!-- Footer Section -->
 <footer class="main-footer">
@@ -443,5 +535,25 @@
     </div>
   </footer>
   <script src="set.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const slides = document.querySelectorAll('.slide-item');
+        let currentSlide = 0;
+
+        function nextSlide() {
+            // Remove active class from current slide
+            slides[currentSlide].classList.remove('active');
+            
+            // Move to next slide
+            currentSlide = (currentSlide + 1) % slides.length;
+            
+            // Add active class to next slide
+            slides[currentSlide].classList.add('active');
+        }
+
+        // Change slide every 3 seconds
+        setInterval(nextSlide, 5000);
+    });
+</script>
 </body>
 </html>

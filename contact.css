@@ -17,6 +17,9 @@ body {
     margin: 0 auto;
     padding: 1rem;
 }
+.container p{
+
+}
 
 h1, h2 {
     color: var(--primary-color);

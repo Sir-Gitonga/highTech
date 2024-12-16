@@ -5,44 +5,38 @@
 }
 
 /* Hero Section */
-#hero {
-  background-image: url('clienti.png');
-  background-size: cover;
-  background-position: center center; 
-  background-attachment: fixed;
+.custom-container {
   position: relative;
-  overflow: hidden;
-  padding: 50px;
+  background: linear-gradient(135deg, #00bdf7 0%, #3498db 100%);
+  background-image: url('clienti.png'); /* Add your image here */
+  background-position: center;
+  background-size: cover;
+  background-blend-mode: overlay;
+  color: white;
   text-align: center;
+  padding: 80px 20px 100px;
+  overflow: hidden;
 }
 
-#hero::before {
-  content: '';
+
+.wave-shape {
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 0;
   width: 100%;
-  height: 100%;
-  background: rgba(17, 0, 255, 0.5); 
-   
+  overflow: hidden;
+  line-height: 0;
 }
 
-#hero h1 {
-  font-size: 3rem;
-  margin-bottom: 0.5rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  color: var(--text-color);
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  text-shadow:  1px 10px rgba(0, 0, 0, 0.589);
-  position: relative; 
-  z-index: 2;
+.wave-shape svg {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 100px;
 }
 
-#hero p {
-  font-size: 1.5rem;
-  position: relative; 
-  z-index: 2;
+.wave-fill {
+  fill: #1a1a2e;
 }
 
 /* About Section */
@@ -137,6 +131,9 @@
   padding: 0 20px;
 }
 
+#teams{
+  background-color: aliceblue;
+}
 .teams-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -177,7 +174,7 @@
 }
 
 .members-front {
-  background-color: #f0f4f8;
+  background-color: #ababac;
 }
 
 .members-back {
@@ -272,8 +269,10 @@
 .achievement-grid {
   display: flex;
   flex-wrap: wrap;
+  margin-top: -30px;
   justify-content: space-around;
   gap: 1rem;
+  position: relative;
 }
 
 .achievement-item {

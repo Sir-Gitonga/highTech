@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | HighTech Quantum</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+ .custom-container {
+    position: relative;
+    background: linear-gradient(135deg, #00bdf7 0%, #3498db 100%);
+    background-image: url('services.pngjpg'); /* Add your image here */
+    background-position: center;
+    background-size: cover;
+    background-blend-mode: overlay;
+    color: white;
+    text-align: center;
+    padding: 80px 20px 100px;
+    overflow: hidden;
+}
+
+.wave-shape {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.wave-shape svg {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 100px;
+}
+
+.wave-fill {
+    fill: #f4f7f6;
+}
+
+.services-hero-content {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    z-index: 2;
+}
+
+.services-hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    margin-top: -90px;
+    font-weight: 600;
+    text-shadow: 4px 4px 2px rgb(0, 0, 0);
+    color: var(--primary-color); 
+}
+
+.services-hero-content p {
+    font-size: 1.1rem;
+    line-height: 1.4;background-color: #ff660091;
+    text-shadow: 1px 1px 2px rgb(0, 0, 0); 
+    color: #ffffff; 
+}
+
+.service-container{
+    background-color: #f4f7f6;
+    padding: 1px;
+}
+.web-design-service-box {
+    max-width: 400px;
+    margin: 2rem auto;
+    position: relative;
+    margin-top: -10px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    padding: 25px;
+    border: 1px solid #00bdf7;
+    transition: all 0.3s ease;
+}
+
+.web-design-service-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+.service-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 2px solid rgba(59, 131, 246, 0.719);
+    padding-bottom: 15px;
+}
+
+.service-header i {
+    font-size: 2.5rem;
+    color: orangered;
+    margin-right: 15px;
+}
+
+.service-header h2 {
+    color: #000000;
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.service-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.service-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    color: #000000;
+    transition: transform 0.2s ease;
+}
+
+.service-list li:hover {
+    transform: translateX(10px);
+}
+
+.service-list li i {
+    color: #156eff;
+    margin-right: 12px;
+    font-size: 1.2rem;
+    width: 25px;
+    text-align: center;
+}
+
+.service-list li span {
+    font-weight: 500;
+}
+
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+        }
+
+        .services-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .service-section {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .service-content {
+            flex: 1;
+            padding: 10px;
+        }
+
+        .service-image {
+            flex: 1;
+            text-align: center;
+        }
+
+        .service-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+
+        .service-number {
+            font-size: 30px;
+            padding: 10px;
+            font-weight: bold;
+            color: #3d3d3d;
+            border-radius: 50%;
+            background-color: orangered;
+            position: relative;
+        }
+
+        .service-title {
+            position: relative;
+            margin-bottom: 10px;
+        }
+
+        .service-title h2 {
+            font-size: 2.5rem;
+            color: #ffffff;
+        }
+
+        .service-description {
+            margin-bottom: 20px;
+            color: aliceblue;
+        }
+
+        .service-btn {
+            display: inline-block;
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .service-btn:hover {
+            background-color: #2980b9;
+        }
+
+        /* Alternate layout for odd/even sections */
+        .service-section:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        /* Mobile Responsiveness */
+        @media screen and (max-width: 768px) {
+            .service-section {
+                flex-direction: column;
+            }
+
+            .service-section:nth-child(even) {
+                flex-direction: column;
+            }
+
+            .service-content, .service-image {
+                flex: 100%;
+                width: 100%;
+            }
+
+            .service-number {
+                font-size: 30px;
+                margin: 10px;
+            }
+
+            .service-title h2 {
+                font-size: 2rem;
+            }
+        }
+
+.service-image {
+    flex: 1;
+    text-align: center;
+}
+
+.image-slider {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding-top: 56.25%;
+}
+
+.slide-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slide-item.active {
+    opacity: 1;
+    z-index: 2;
+}
+
+.slide-item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.slide-item .hover-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.slide-item:hover .hover-text {
+    opacity: 1;
+}
+
+.slide-item .hover-text h3 {
+    margin-bottom: 10px;
+    font-size: 1.2em; /* Slightly smaller for better mobile display */
+    font-weight: bold;
+}
+
+.slide-item .hover-text p {
+    font-size: 0.9em; /* Slightly smaller for better mobile display */
+}
+
+/* Additional Media Queries for Responsiveness */
+@media screen and (max-width: 768px) {
+    .service-image {
+        min-height: 200px;
+    }
+
+    .slide-item .hover-text h3 {
+        font-size: 1em;
+    }
+
+    .slide-item .hover-text p {
+        font-size: 0.8em;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .service-image {
+        min-height: 10px;
+    }
+
+    .slide-item .hover-text h3 {
+        font-size: 0.9em;
+    }
+
+    .slide-item .hover-text p {
+        font-size: 0.7em;
+    }
+}
+    </style>
+</head>
+<div class="top-bar">
+    <div class="contact-infom">
+        <span class="phone"><i class="fas fa-phone-alt"></i> +254 110 848 885</span>
+        <span class="email"><i class="fas fa-envelope"></i> info@gitonga.com</span>
+        <span class="hours"><i class="fas fa-clock"></i> Mon-Fri 9am-6pm</span>
+    </div>
+    <div class="social-icons">
+        <a href="#" class="icon"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="icon"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="icon"><i class="fab fa-instagram"></i></a>
+    </div>
+</div>
+<body>
+    <header id="main-header">
+        <div class="logo">
+            <a href="index.php"><img src="logo.png" alt="Gitonga Tech Studio"></a>
+        </div>
+        <h2>HighTech Quantum</h2>
+        <nav>
+            <ul>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li class="dropdowns">
+                    <a href="services.html">Services <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdowns-content">
+                        <a href="web-design.html"><i class="fa fa-desktop"></i> Web Design & Development</a>
+                        <a href="ecommerce.html"><i class="fa fa-shopping-cart"></i> E-commerce</a>
+                        <a href="graphic-design.html"><i class="fa fa-paint-brush"></i> Graphic Design</a>
+                        <a href="photography.html"><i class="fa fa-camera"></i> Photography</a>
+                        <a href="seo.html"><i class="fa fa-chart-line"></i> SEO Services</a>
+                        <a href="social-media.html"><i class="fa fa-share-alt"></i> Social Media Marketing</a>
+                    </div>
+                </li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li class="dropdown">
+                    <button class="dropbtn">Go To Platforms <i class="fa fa-caret-down"></i></button>
+                    <div class="dropdown-content">
+                        <a href="signin.php"><i class="fa fa-graduation-cap"></i> HighTech Lab</a>
+                        <a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> HighTech Dashboard</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <div class="hamburger-menu">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+    </header> 
+
+    <div class="custom-container gradient-background">
+        <div class="wave-shape">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
+                <path class="wave-fill" d="M0,50 C150,100 350,0 500,50 C650,100 850,0 1000,50 L1000,100 L0,100 Z"></path>
+            </svg>
+        </div>
+        <div class="services-hero-content">
+            <h1>Web Design & Development</h1>
+            <p>Beautiful designs and powerful websites tailored to elevate your brand and grow your business.</p>
+        </div>
+        
+    </div>
+
+   <section class="service-container">
+    <div class="web-design-service-box">
+        <div class="service-header">
+            <i class="fas fa-desktop"></i>
+            <h2>Web Design</h2>
+        </div>
+        <ul class="service-list">
+            <li>
+                <i class="fas fa-palette"></i>
+                <span>Custom web design and layout creation</span>
+            </li>
+            <li>
+                <i class="fas fa-mobile-alt"></i>
+                <span>Responsive web design (mobile and tablet-friendly)</span>
+            </li>
+            <li>
+                <i class="fas fa-sync"></i>
+                <span>Website redesign and updates</span>
+            </li>
+            <li>
+                <i class="fas fa-code"></i>
+                <span>Web application development</span>
+            </li>
+            <li>
+                <i class="fas fa-cloud"></i>
+                <span>Website hosting and domain registration assistance</span>
+            </li>
+            <li>
+                <i class="fas fa-wrench"></i>
+                <span>Website maintenance and support</span>
+            </li>
+        </ul>
+    </div>
+   </section>
+
+   <div class="services-container">
+    <div class="service-section">
+        <div class="service-content">
+            <div class="service-title">
+                <span class="service-number">01</span>
+                <h2>Web Application Development</h2>
+            </div>
+            <div class="service-description">
+                <p>We specialize in creating robust and scalable web applications tailored to your business needs. Our development process focuses on delivering innovative solutions that enhance your digital presence and provide seamless user experiences across various platforms and industries.</p>
+            </div>
+            <a href="web-development.html" class="service-btn">Explore Web Application Services</a>
+        </div>
+        <div class="service-image">
+            <div class="image-slider">
+                <div class="slide-item active">
+                    <img src="focus.jpg" alt="Web Application Development">
+                    <div class="hover-text">
+                        <h3>Innovative Design</h3>
+                        <p>Cutting-edge web application solutions</p>
+                    </div>
+                </div>
+                <div class="slide-item">
+                    <img src="web.png" alt="Web Application Development Second Image">
+                    <div class="hover-text">
+                        <h3>User Experience</h3>
+                        <p>Seamless and intuitive interface design</p>
+                    </div>
+                </div>
+                <div class="slide-item">
+                    <img src="web2.png" alt="Web Application Development Third Image">
+                    <div class="hover-text">
+                        <h3>Performance Optimization</h3>
+                        <p>Fast and responsive web applications</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    </div>
+
+    <div class="service-section">
+        <div class="service-content">
+            <div class="service-title">
+                <span class="service-number">02</span>
+                <h2>Website Hosting and Domain Registration</h2>
+            </div>
+            <div class="service-description">
+                <p>Simplify your online presence with our comprehensive hosting and domain registration assistance. We help you secure the perfect domain name and provide reliable, secure, and scalable hosting solutions tailored to your specific website requirements and traffic needs.</p>
+            </div>
+            <a href="hosting.html" class="service-btn">Get Hosting Support</a>
+        </div>
+        <div class="service-image">
+            <img src="data2.png" alt="Website Hosting Services">
+        </div>
+    </div>
+
+    <div class="service-section">
+        <div class="service-content">
+            <div class="service-title">
+                <span class="service-number">03</span>
+                <h2>Website Maintenance and Support</h2>
+            </div>
+            <div class="service-description">
+                <p>Ensure your website remains up-to-date, secure, and fully functional with our comprehensive maintenance and support services. We provide ongoing technical support, regular security updates, performance optimization, and troubleshooting to keep your online presence running smoothly.</p>
+            </div>
+            <a href="maintenance.html" class="service-btn">Learn About Maintenance</a>
+        </div>
+        <div class="service-image">
+            <img src="slide2.jpg" alt="Website Maintenance Services">
+        </div>
+    </div>
+
+    <div class="service-section">
+        <div class="service-content">
+            <div class="service-title">
+                <span class="service-number">04</span>
+                <h2>Custom Website Design</h2>
+            </div>
+            <div class="service-description">
+                <p>Create a stunning and unique online presence with our custom website design services. We craft visually appealing, user-friendly layouts that reflect your brand's identity, ensuring a memorable and professional first impression for your visitors.</p>
+            </div>
+            <a href="design.html" class="service-btn">View Design Options</a>
+        </div>
+        <div class="service-image">
+            <img src="slide.png.jpg" alt="Custom Website Design">
+        </div>
+    </div>
+
+    <div class="service-section">
+        <div class="service-content">
+            <div class="service-title">
+                <span class="service-number">05</span>
+                <h2>Responsive Web Design</h2>
+            </div>
+            <div class="service-description">
+                <p>Optimize your website's performance across all devices with our responsive web design solutions. We ensure your site looks perfect and functions flawlessly on smartphones, tablets, and desktop computers, providing an exceptional user experience regardless of screen size.</p>
+            </div>
+            <a href="responsive-design.html" class="service-btn">Learn About Responsive Design</a>
+        </div>
+        <div class="service-image">
+            <img src="services.png.jpg" alt="Responsive Web Design">
+        </div>
+    </div>
+
+    <div class="service-section">
+        <div class="service-content">
+            <div class="service-title">
+                <span class="service-number">06</span>
+                <h2>Website Redesign and Updates</h2>
+            </div>
+            <div class="service-description">
+                <p>Keep your website modern and effective with our website redesign and update services. We help you refresh your online presence, improve user experience, implement the latest web technologies, and ensure your site remains competitive in the ever-evolving digital landscape.</p>
+            </div>
+            <a href="redesign.html" class="service-btn">Explore Redesign Services</a>
+        </div>
+        <div class="service-image">
+            <img src="website-redesign.jpg" alt="Website Redesign Services">
+        </div>
+    </div>
+</div>
+        
+<!-- Footer Section -->
+<footer class="main-footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <a href="index.php"><img src="logo.png.jpg" alt="HighTech QuantumLogo"></a>
+                <p>Innovating for a better tomorrow</p>
+            </div>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.php">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h3>Connect With Us</h3>
+                <div class="social-icons">
+                    <a href="#" class="icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="icon"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 HighTech Quantum. All rights reserved.</p>
+        </div>
+    </div>
+  </footer>
+  <script src="set.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const slides = document.querySelectorAll('.slide-item');
+        let currentSlide = 0;
+
+        function nextSlide() {
+            // Remove active class from current slide
+            slides[currentSlide].classList.remove('active');
+            
+            // Move to next slide
+            currentSlide = (currentSlide + 1) % slides.length;
+            
+            // Add active class to next slide
+            slides[currentSlide].classList.add('active');
+        }
+
+        // Change slide every 3 seconds
+        setInterval(nextSlide, 5000);
+    });
+</script>
+</body>
+</html>

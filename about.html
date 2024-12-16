@@ -32,7 +32,7 @@
         <span></span>
         <span></span>
     </div>
-    <header id="main-header"> 
+    <header id="main-header">
         <div class="logo">
             <a href="index.php"><img src="logo.png" alt="Gitonga Tech Studio"></a>
         </div>
@@ -41,15 +41,25 @@
             <ul>
                 <li><a href="index.php">Home</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="services.html">Services</a></li>
+                <li class="dropdowns">
+                    <a href="services.html">Services <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdowns-content">
+                        <a href="web-design.html"><i class="fa fa-desktop"></i> Web Design & Development</a>
+                        <a href="ecommerce.html"><i class="fa fa-shopping-cart"></i> E-commerce</a>
+                        <a href="graphic-design.html"><i class="fa fa-paint-brush"></i> Graphic Design</a>
+                        <a href="photography.html"><i class="fa fa-camera"></i> Photography</a>
+                        <a href="seo.html"><i class="fa fa-chart-line"></i> SEO Services</a>
+                        <a href="social-media.html"><i class="fa fa-share-alt"></i> Social Media Marketing</a>
+                    </div>
+                </li>
                 <li><a href="portfolio.html">Portfolio</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li class="dropdown">
-                  <button class="dropbtn">Go To Platforms <i class="fa fa-caret-down"></i></button>
-                  <div class="dropdown-content">
-                    <a href="signup.php"><i class="fa fa-graduation-cap"></i> HighTech Lab</a>
-                    <a href="#"><i class="fas fa-tachometer-alt"></i> HighTech Dashboard</a>
-                  </div>
+                    <button class="dropbtn">Go To Platforms <i class="fa fa-caret-down"></i></button>
+                    <div class="dropdown-content">
+                        <a href="signin.php"><i class="fa fa-graduation-cap"></i> HighTech Lab</a>
+                        <a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> HighTech Dashboard</a>
+                    </div>
                 </li>
             </ul>
         </nav>
@@ -61,10 +71,18 @@
     </header>
 
 <body>
-  <section id="hero">
-    <h1>About us</h1>
-    <p>Discover the story behind HighTech Quantum</p>
-</section>
+    <div class="custom-container gradient-background">
+        <div class="wave-shape">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
+                <path class="wave-fill" d="M0,50 C150,100 350,0 500,50 C650,100 850,0 1000,50 L1000,100 L0,100 Z"></path>
+            </svg>
+        </div>
+        <div class="services-hero-content">
+            <h1>About Us</h1>
+            <p>Discover the Story Behind HighTech Quantum</p>
+        </div>
+        
+    </div>
 <!-- Acheivement Counting Section -->
 <section id="achievements" class="section">
   <div class="container">
@@ -121,7 +139,7 @@
 
 <section id="teams" class="section">
   <div class="container">
-      <h2 class="section-title">Our Trailblazers</h2>
+      <h2 class="section-title">Meet Our Tech Pioneers</h2>
       <div class="teams-grid">
           <div class="teams-member">
               <div class="members-card">
@@ -202,57 +220,6 @@
                   </div>
               </div>
           </div>
-          
-          <div class="teams-member">
-              <div class="members-card">
-                  <div class="members-front">
-                      <img src="chairman.jpg" alt="Jamal Thompson">
-                      <h3>Jamal Thompson</h3>
-                      <p>UX Magician</p>
-                      <div class="social-links">
-                          <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
-                          <a href="#" class="social-link"><i class="fab fa-dribbble"></i></a>
-                      </div>
-                  </div>
-                  <div class="members-back">
-                      <p>"Crafting digital experiences that feel like magic."</p>
-                      <ul class="members-skills">
-                          <li>Interaction Design</li>
-                          <li>User Research</li>
-                          <li>Prototyping</li>
-                      </ul>
-                      <div class="social-links">
-                          <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
-                          <a href="#" class="social-link"><i class="fab fa-dribbble"></i></a>
-                      </div>
-                  </div>
-              </div>
-          </div>
-          <div class="teams-member">
-            <div class="members-card">
-                <div class="members-front">
-                    <img src="chairman.jpg" alt="Jamal Thompson">
-                    <h3>Jamal Thompson</h3>
-                    <p>UX Magician</p>
-                    <div class="social-links">
-                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-dribbble"></i></a>
-                    </div>
-                </div>
-                <div class="members-back">
-                    <p>"Crafting digital experiences that feel like magic."</p>
-                    <ul class="members-skills">
-                        <li>Interaction Design</li>
-                        <li>User Research</li>
-                        <li>Prototyping</li>
-                    </ul>
-                    <div class="social-links">
-                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-dribbble"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
       </div>
   </div>
   <div class="cta-message">

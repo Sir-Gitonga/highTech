@@ -85,7 +85,7 @@ $userInitials = isset($user['fullName']) ? getInitials($user['fullName']) : '';
                     <i class="fas fa-sign-out-alt"></i>
                     <span>Logout</span>
                 </div>
-            </nav>
+            </nav>  
         </aside>
         <main class="main-content">
             <header class="topbar">

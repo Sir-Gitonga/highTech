@@ -34,7 +34,7 @@
         <span></span>
         <span></span>
     </div>
-    <header id="main-header"> 
+    <header id="main-header">
         <div class="logo">
             <a href="index.php"><img src="logo.png" alt="Gitonga Tech Studio"></a>
         </div>
@@ -43,15 +43,25 @@
             <ul>
                 <li><a href="index.php">Home</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="services.html">Services</a></li>
+                <li class="dropdowns">
+                    <a href="services.html">Services <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdowns-content">
+                        <a href="web-design.html"><i class="fa fa-desktop"></i> Web Design & Development</a>
+                        <a href="ecommerce.html"><i class="fa fa-shopping-cart"></i> E-commerce</a>
+                        <a href="graphic-design.html"><i class="fa fa-paint-brush"></i> Graphic Design</a>
+                        <a href="photography.html"><i class="fa fa-camera"></i> Photography</a>
+                        <a href="seo.html"><i class="fa fa-chart-line"></i> SEO Services</a>
+                        <a href="social-media.html"><i class="fa fa-share-alt"></i> Social Media Marketing</a>
+                    </div>
+                </li>
                 <li><a href="portfolio.html">Portfolio</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li class="dropdown">
-                  <button class="dropbtn">Go To Platforms <i class="fa fa-caret-down"></i></button>
-                  <div class="dropdown-content">
-                    <a href="signup.php"><i class="fa fa-graduation-cap"></i> HighTech Lab</a>
-                    <a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> HighTech Dashboard</a>
-                  </div>
+                    <button class="dropbtn">Go To Platforms <i class="fa fa-caret-down"></i></button>
+                    <div class="dropdown-content">
+                        <a href="signin.php"><i class="fa fa-graduation-cap"></i> HighTech Lab</a>
+                        <a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> HighTech Dashboard</a>
+                    </div>
                 </li>
             </ul>
         </nav>
@@ -85,7 +95,7 @@
         </div>
         
         <div class="slide fade">
-          <img src="it.jpg" alt="Discover Our Services">
+          <img src="pp.png.jpg" alt="Discover Our Services">
           <div class="content">
             <div class="text">
               <h2>Discover Our World-Class Services</h2>
@@ -105,10 +115,10 @@
         </div>
         
         <div class="slide fade">
-          <img src="slide3.jpg" alt="Let's Create Together">
+          <img src="slide.png.jpg" alt="Let's Create Together">
           <div class="content">
             <div class="text">
-              <h2>Let's Create Something Amazing Together</h2>
+              <h2>Transform Ideas into Impact</h2>
               <p>Your vision, our expertise</p>
             </div>
             <div class="containr">
@@ -138,7 +148,7 @@
 <!-- about us section -->
     <section id="about-preview">
       <div class="container">
-          <h2 class="section-title">About HighTech Quantum</h2>
+          <h2 class="section-title">Who We Are</h2>
           <div class="about-content">
               <div class="about-image">
                   <img src="about2.png" alt="HighTech Quantum team focused on work">
@@ -175,30 +185,56 @@
       </div>
   </section>
 
+  <section id="why-choose-us" class="why-choose-us-section">
+    <div class="container">
+      <h2 class="section-title">Why Choose US?</h2>
+      <div class="value-props">
+        <div class="value-prop">
+          <i class="fas fa-rocket"></i>
+          <h3>Innovative Solutions</h3>
+          <p>We're at the forefront of technology, delivering cutting-edge solutions that propel your business into the future.</p>
+        </div>
+        <div class="value-prop">
+          <i class="fas fa-handshake"></i>
+          <h3>Partnership Approach</h3>
+          <p>We don't just work for you; we work with you. Your success is our success, and we're committed to your growth.</p>
+        </div>
+        <div class="value-prop">
+          <i class="fas fa-users-cog"></i>
+          <h3>Expert Team</h3>
+          <p>Our diverse team of tech wizards brings a wealth of experience and fresh perspectives to every project.</p>
+        </div>
+        <div class="value-prop">
+          <i class="fas fa-chart-line"></i>
+          <h3>Results-Driven</h3>
+          <p>We focus on delivering tangible outcomes that boost your ROI and drive your business forward.</p>
+        </div>
+      </div>
+      <div class="cta-message">
+        <h3>Ready to Boost Your Online Presence?</h3>
+        <p>Let's make your digital goals happen.</p>
+        <div class="cta-container">
+            <a href="contact.html" class="btn">Get Started <i class="fas fa-arrow-right"></i></a>
+          </div>
+    </div>
+    </div>
+  </section>
+
 <!-- services section -->
   <section id="services" class="services-section">
     <div class="container">
       <h2 class="section-title">Innovative Digital Solutions</h2>
       <div class="swiper-container service-carousel">
         <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <div class="service-item" data-service="web-design">
-                <div class="service-icon">
-                    <i class="fas fa-laptop-code"></i>
-                </div>
-                <h3>Web Design</h3>
-                <p>Crafting visually stunning and intuitive websites that captivate your audience.</p>
-                <a href="#" class="learn-more">Explore</a>
-            </div>
-          </div>
+          
           <div class="swiper-slide">
             <div class="service-item" data-service="web-development">
                 <div class="service-icon">
                     <i class="fas fa-code"></i>
                 </div>
-                <h3>Web Development</h3>
+                <h3>Web Development /Design</h3>
                 <p>Building cutting-edge web applications with scalable architecture.</p>
-                <a href="#" class="learn-more">Discover</a>
+                <a href="web-design.html" class="learn-more">Discover</a>
             </div>
           </div>
           <div class="swiper-slide">
@@ -253,39 +289,6 @@
           </div>
         </div>
         <div class="swiper-pagination"></div>
-      </div>
-    </div>
-  </section>
-  
-  <section id="why-choose-us" class="why-choose-us-section">
-    <div class="container">
-      <h2 class="section-title">Why Choose US?</h2>
-      <div class="value-props">
-        <div class="value-prop">
-          <i class="fas fa-rocket"></i>
-          <h3>Innovative Solutions</h3>
-          <p>We're at the forefront of technology, delivering cutting-edge solutions that propel your business into the future.</p>
-        </div>
-        <div class="value-prop">
-          <i class="fas fa-handshake"></i>
-          <h3>Partnership Approach</h3>
-          <p>We don't just work for you; we work with you. Your success is our success, and we're committed to your growth.</p>
-        </div>
-        <div class="value-prop">
-          <i class="fas fa-users-cog"></i>
-          <h3>Expert Team</h3>
-          <p>Our diverse team of tech wizards brings a wealth of experience and fresh perspectives to every project.</p>
-        </div>
-        <div class="value-prop">
-          <i class="fas fa-chart-line"></i>
-          <h3>Results-Driven</h3>
-          <p>We focus on delivering tangible outcomes that boost your ROI and drive your business forward.</p>
-        </div>
-      </div>
-      <div class="cta-message">
-        <h3>Ready to Transform Your Digital Presence?</h3>
-        <p>Join the ranks of satisfied clients who've experienced the HighTech Quantum difference. Let's turn your digital dreams into reality.</p>
-        <a href="contact.html" class="btn btn-primary">Start Your Journey</a>
       </div>
     </div>
   </section>
@@ -359,87 +362,6 @@
   </div>
 </section>
 
-<!-- Team Spotlight Section -->
-<section id="team-spotlight" class="team-spotlight-section">
-  <div class="container">
-    <h2 class="section-title">Meet Our Tech Pioneers</h2>
-    <div class="team-grid">
-      <div class="team-member">
-        <div class="member-image">
-          <img src="bp.jpg" alt="BrianPaul">
-          <div class="member-overlay">
-            <p class="member-quote">"Innovation is our compass, guiding us to transform challenges into opportunities for our clients."</p>
-              <div class="member-social">
-                <a href="https://www.linkedin.com/in/Brian Paul" class="social-link"><i class="fab fa-linkedin"></i></a>
-                <a href="https://wa.me/+254110848885" class="social-link"><i class="fab fa-whatsapp"></i></a>
-                <a href="https://github.com/Catalyst254" class="social-link"><i class="fab fa-github"></i></a>
-              </div>
-          </div>
-        </div>
-        <div class="member-info">
-          <h3>BrianPaul Gitonga</h3>
-          <p>CEO HighTech Quantum</p>
-        </div>
-      </div>
-      <div class="team-member">
-        <div class="member-image">
-          <img src="chairman.jpg" alt="Samantha Lee">
-          <div class="member-overlay">
-            <p class="member-quote">"In the tapestry of technology, user experience is our most vibrant thread."</p>
-            <div class="member-social">
-              <a href="https://www.linkedin.com/in/Brian Paul" class="social-link"><i class="fab fa-linkedin"></i></a>
-              <a href="https://wa.me/+254110848885" class="social-link"><i class="fab fa-whatsapp"></i></a>
-              <a href="https://github.com/Catalyst254" class="social-link"><i class="fab fa-github"></i></a>
-            </div>
-          </div>
-        </div>
-        <div class="member-info">
-          <h3>Shelitah Muthii</h3>
-          <p>UX Design Lead</p>
-        </div>
-      </div>
-      <div class="team-member">
-        <div class="member-image">
-          <img src="slide2.jpg" alt="Michael Chen">
-          <div class="member-overlay">
-            <p class="member-quote">"Data is the compass, and a Data Scientist is the navigator who transforms raw information into the map that guides informed decisions"</p>
-            <div class="member-social">
-              <a href="https://www.linkedin.com/in/Brian Paul" class="social-link"><i class="fab fa-linkedin"></i></a>
-              <a href="https://wa.me/+254110848885" class="social-link"><i class="fab fa-whatsapp"></i></a>
-              <a href="https://github.com/Catalyst254" class="social-link"><i class="fab fa-github"></i></a>
-            </div>
-          </div>
-        </div>
-        <div class="member-info">
-          <h3>John Mary</h3>
-          <p>Data Scientist. </p>
-        </div>
-      </div>
-      <div class="team-member">
-        <div class="member-image">
-          <img src="typing.jpg" alt="John Mary">
-          <div class="member-overlay">
-            <p class="member-quote">"The world of technology is a canvas painted by countless artists."</p>
-            <div class="member-social">
-              <a href="https://www.linkedin.com/in/Brian Paul" class="social-link"><i class="fab fa-linkedin"></i></a>
-              <a href="https://wa.me/+254110848885" class="social-link"><i class="fab fa-whatsapp"></i></a>
-              <a href="https://github.com/Catalyst254" class="social-link"><i class="fab fa-github"></i></a>
-            </div>
-          </div>
-        </div>
-        <div class="member-info">
-          <h3>Emily Rodriguez</h3>
-          <p>Cybersecurity Expert</p>
-        </div>
-      </div>
-    </div>
-    <div class="cta-message">
-      <h3>Join Our Innovative Team</h3>
-      <p>We're always looking for passionate tech enthusiasts to join our mission.</p>
-      <a href="contact.html" class="btn btn-primary">View Openings</a>
-    </div>
-  </div>
-</section>
 <!-- Latest Tech Insights Section -->
   <section id="tech-insights" class="tech-insights-section">
     <div class="container">
@@ -515,69 +437,26 @@
     </div>
   </section>
 
-  <!--  Contact Us Section -->
-  <section id="contact-us" class="contact-us-section">
-    <div class="container">
-        <h2 class="section-title">Connect with Us</h2>
-        <div class="contact-content">
-            <div class="contact-info">
-                <h3>Digital Channels</h3>
-                <p><i class="fab fa-slack"></i> Join our Slack community</p>
-                <p><i class="fab fa-discord"></i> Chat on Discord</p>
-                <p><i class="fab fa-github"></i> Contribute on GitHub</p>
-              <div class="social-icons">
-                  <a href="#" class="icon"><i class="fab fa-facebook-f"></i></a>
-                  <a href="#" class="icon"><i class="fab fa-twitter"></i></a>
-                  <a href="#" class="icon"><i class="fab fa-instagram"></i></a>
-                  <a href="#" class="icon"><i class="fab fa-linkedin-in"></i></a>
-              </div>
-            </div>
-            <form class="contact-form">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <select name="inquiry-type">
-                    <option value="" disabled selected>Select Inquiry Type</option>
-                    <option value="partnership">Partnership</option>
-                    <option value="support">Technical Support</option>
-                    <option value="feedback">Product Feedback</option>
-                </select>
-                <textarea name="message" placeholder="Your Message" required></textarea>
-                <button type="submit" class="btn btn-primary">
-                    <i class="fas fa-paper-plane"></i> Send Message
-                </button>
-            </form>
-        </div>
-    </div>
-</section>
-
-<!--  FAQ Section -->
+<!-- FAQ Section -->
 <section id="faq" class="faq-section">
-  <h2 class="section-title">Frequently Asked Questions</h2>
+  <h2 class="section-title">FAQ</h2>
   <div class="faq-list">
-    <div class="faq-item">
-      <h3 class="question">What makes HighTech Quantum unique?</h3>
-      <div class="answer">
-        <p>At HighTech Quantum, we pride ourselves on our holistic approach to digital solutions. We combine cutting-edge technology with creative design to deliver tailored results that exceed client expectations.</p>
-      </div>
-    </div>
-    <div class="faq-item">
-      <h3 class="question">What services does HighTech Quantum offer?</h3>
-      <div class="answer">
-        <p>HighTech Quantum offers a wide range of digital solutions including web design, web development, graphic design, e-commerce solutions, digital marketing, professional photography, and cybersecurity services</p>
-      </div>
-    </div>
-    <div class="faq-item">
-      <h3 class="question">How long does a typical project take?</h3>
-      <div class="answer">
-        <p>Project timelines vary depending on the scope and complexity. We work closely with our clients to establish realistic timelines and keep them updated throughout the process.</p>
-      </div>
-    </div>
-    <div class="faq-item">
-      <h3 class="question">What industries do you specialize in?</h3>
-      <div class="answer">
-        <p>While we have experience across various sectors, we particularly excel in e-commerce, healthcare, education, and finance. However, our adaptable approach allows us to cater to diverse industry needs effectively.</p>
-      </div>
-    </div>
+    <details class="faq-item">
+      <summary>What makes HighTech Quantum unique?</summary>
+      <p>We combine cutting-edge technology with creative design for tailored solutions that exceed expectations.</p>
+    </details>
+    <details class="faq-item">
+      <summary>What services do you offer?</summary>
+      <p>Web design/development, graphic design, e-commerce, digital marketing, photography, and cybersecurity services.</p>
+    </details>
+    <details class="faq-item">
+      <summary>How long does a typical project take?</summary>
+      <p>Timelines vary by scope. We establish realistic deadlines and provide regular updates.</p>
+    </details>
+    <details class="faq-item">
+      <summary>What industries do you specialize in?</summary>
+      <p>E-commerce, healthcare, education, and finance, with capability to serve diverse sectors.</p>
+    </details>
   </div>
 </section>
 

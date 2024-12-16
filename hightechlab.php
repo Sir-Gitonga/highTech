@@ -131,7 +131,7 @@ $userInitials = isset($user['fullName']) ? getInitials($user['fullName']) : '';
                 
                 <div class="hero-right">
                     <div class="image-container">
-                    <img src="chairman.jpg" alt="Tech Innovation" class="hero-image">
+                    <img src="hero1.png" alt="Tech Innovation" class="hero-image">
                     </div>
                 </div>
                 </div>

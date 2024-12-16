@@ -136,7 +136,7 @@
         <span></span>
         <span></span>
     </div>
-    <header id="main-header"> 
+    <header id="main-header">
         <div class="logo">
             <a href="index.php"><img src="logo.png" alt="Gitonga Tech Studio"></a>
         </div>
@@ -145,15 +145,25 @@
             <ul>
                 <li><a href="index.php">Home</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="services.html">Services</a></li>
+                <li class="dropdowns">
+                    <a href="services.html">Services <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdowns-content">
+                        <a href="web-design.html"><i class="fa fa-desktop"></i> Web Design & Development</a>
+                        <a href="ecommerce.html"><i class="fa fa-shopping-cart"></i> E-commerce</a>
+                        <a href="graphic-design.html"><i class="fa fa-paint-brush"></i> Graphic Design</a>
+                        <a href="photography.html"><i class="fa fa-camera"></i> Photography</a>
+                        <a href="seo.html"><i class="fa fa-chart-line"></i> SEO Services</a>
+                        <a href="social-media.html"><i class="fa fa-share-alt"></i> Social Media Marketing</a>
+                    </div>
+                </li>
                 <li><a href="portfolio.html">Portfolio</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li class="dropdown">
-                  <button class="dropbtn">Go To Platforms <i class="fa fa-caret-down"></i></button>
-                  <div class="dropdown-content">
-                    <a href="signup.php"><i class="fa fa-graduation-cap"></i> HighTech Lab</a>
-                    <a href="#"><i class="fas fa-tachometer-alt"></i> HighTech Dashboard</a>
-                  </div>
+                    <button class="dropbtn">Go To Platforms <i class="fa fa-caret-down"></i></button>
+                    <div class="dropdown-content">
+                        <a href="signin.php"><i class="fa fa-graduation-cap"></i> HighTech Lab</a>
+                        <a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> HighTech Dashboard</a>
+                    </div>
                 </li>
             </ul>
         </nav>
@@ -329,6 +339,41 @@
                         item.style.display = 'none';
                     }
                 });
+            });
+        });
+    </script>
+    <script>
+
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', function(event) {
+            const nav = document.querySelector('nav');
+            const hamburgerMenu = document.querySelector('.hamburger-menu');
+            
+            // Check if click is outside nav and hamburger menu
+            if (!nav.contains(event.target) && !hamburgerMenu.contains(event.target)) {
+                nav.classList.remove('active');
+                hamburgerMenu.classList.remove('active');
+                
+                // Close all dropdowns
+                const dropdownsContents = document.querySelectorAll('.dropdowns-content');
+                dropdownsContents.forEach(content => {
+                    content.style.display = 'none';
+                });
+            }
+        });
+
+        // Mobile dropdown toggle
+        document.querySelectorAll('.dropdowns > a, .dropdowns > .dropbtns').forEach(item => {
+            item.addEventListener('click', function(e) {
+                if (window.innerWidth <= 768) {
+                    e.preventDefault();
+                    const dropdownsContent = this.nextElementSibling || 
+                        this.closest('.dropdown').querySelector('.dropdowns-content');
+                    
+                    // Toggle dropdown visibility
+                    dropdownsContent.style.display = 
+                        dropdownsContent.style.display === 'block' ? 'none' : 'block';
+                }
             });
         });
     </script>

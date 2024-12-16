@@ -17,7 +17,7 @@ body {
   margin: 0;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   color: var(--text-color);
-  background: linear-gradient(50deg,  #00ffbf, #01241c);
+  background: linear-gradient(95deg,  #003b42, #000120);
   overflow-x: hidden;
 }
 
@@ -116,7 +116,6 @@ header {
   box-shadow: 0 2px 20px rgba(0, 242, 255, 0.1);
   position: relative;
   backdrop-filter: blur(10px);
-  z-index: 1000;
   transition: all 0.3s ease;
 }
 
@@ -125,7 +124,6 @@ header.fixed {
   top: 0;
   left: 0;
   right: 0;
-  background: ;
   backdrop-filter: blur(10px);
 }
 
@@ -210,7 +208,7 @@ nav ul li a:hover {
 
 .line {
   width: 25px;
-  height: 3px;
+  height: 2px;
   background-color: var(--primary-color);
   margin: 5px 0;
   transition: all 0.3s ease;
@@ -241,7 +239,6 @@ nav ul li a:hover {
   }
   
   header {
-     flex-wrap: wrap;
      top: 0;
   }
 
@@ -261,13 +258,12 @@ nav ul li a:hover {
   nav {
     display: none;
     width: 100%;
-    order: 3;
     position: absolute;
-    top: 84%;
+    top: 75%;
     left: 0;
     background-color: rgb(0, 118, 139);
     box-shadow: 2px 2px 20px #0d5bcf;
-    z-index: 1000;
+    z-index: 2;
 }
 
   .hamburger-menu {
@@ -276,12 +272,11 @@ nav ul li a:hover {
 
   nav.active {
     display: block;
-    margin-top: 15px;
   }
 
   nav ul {
     flex-direction: column;
-   gap: 15px;
+    gap: 10px;
   }
 
   nav ul li {
@@ -301,6 +296,86 @@ nav ul li a:hover {
     display: none;
   }
   
+}
+.dropdowns {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdowns .dropbtns {
+  border: none;
+  color: black;
+  font-weight: bolder;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.dropdowns-content {
+  display: none;
+  position: absolute;
+  background-color: rgba(0, 139, 139, 0.9);
+  min-width: 300px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  z-index: 1;
+  top: 100%;
+  left: 0;
+  border-radius: 0 0 10px 10px;
+  overflow: hidden;
+}
+
+.dropdowns-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.dropdowns-content a i {
+  margin-right: 10px;
+}
+
+.dropdowns-content a:hover {
+  background-color: rgba(0, 255, 255, 0.2);
+}
+
+.dropdowns:hover .dropdowns-content {
+  display: block;
+}
+
+/* Mobile Responsiveness for Dropdown */
+@media screen and (max-width: 768px) {
+
+  .dropdowns-content {
+          position: static;
+          display: none;
+          background-color: transparent;
+          box-shadow: none;
+          width: 100%;
+      }
+
+      .dropdowns-content a {
+
+          color: #ffffff;
+          padding: 5px 0;
+      }
+
+      .dropdowns-content a:hover {
+          background-color: rgba(255, 255, 255, 0.1);
+      }
+
+      .dropdowns .dropdown-icon {
+          display: block;
+          margin-left: auto;
+          cursor: pointer;
+          padding: 2px;
+      }
 }
 
 
@@ -344,7 +419,7 @@ nav ul li a:hover {
 .welcome-slideshow {
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 80vh;
   overflow: hidden;
 }
 
@@ -373,7 +448,7 @@ nav ul li a:hover {
   align-items: center;
   color: #fff;
   padding: 2rem;
-  background: linear-gradient(to right, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.4) 100%);
+  background: linear-gradient(to right, rgba(2, 0, 22, 0.925) 0%, rgba(0,0,0,0.4) 100%);
 }
 
 .text {
@@ -385,18 +460,20 @@ nav ul li a:hover {
 
 .text h2 {
   font-size: 3rem;
-  margin-bottom: 1rem;
-  text-transform: uppercase;
+  margin-top: 1rem;
+  text-transform: capitalize;
   font-family: cursive;
   letter-spacing: 2px;
-  text-shadow: 5px 5px 20px rgb(23, 255, 216);
+  text-shadow: 5px 5px 2px rgb(0, 0, 0);
 }
 
 .text p {
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  margin-bottom: 1px;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bolder;
   max-width: 80%;
-  line-height: 1.6;
+  color: orangered;
 }
 
 .containr {
@@ -409,7 +486,7 @@ nav ul li a:hover {
 
 .containr h3 {
   font-size: 2rem;
-  margin-bottom: 1rem;
+  margin-bottom: 8px;
   color: #00ffff;
 }
 
@@ -488,9 +565,9 @@ nav ul li a:hover {
    padding: 1rem;
    flex: none;
    width: 50%;
-   height:40%;
+   height:50%;
    text-align: center;
-   margin-bottom: 200px;
+   margin-bottom: 100px;
 }
 
   .text{
@@ -535,7 +612,11 @@ nav ul li a:hover {
 @media screen and (max-width: 480px) {
   .text h2 {
     font-size: 1.5rem;
-    margin-top: 160px;
+    margin-top: 30px;
+    text-align: left;
+  }
+  .containr h3{
+    font-size: medium;
   }
 
   .prev, .next {
@@ -549,9 +630,10 @@ nav ul li a:hover {
   }
   .containr{
     padding: 1rem;
+    margin-top: -50px;
     flex: none;
-    width: 80%;
-    height: 50%;
+    width: 90%;
+    height: 60%;
     text-align: center;
  }
 }
@@ -735,12 +817,10 @@ nav ul li a:hover {
   text-shadow: 5px 5px 5px black;
   font-size: 2.5rem;
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   color:#f8f8f8;
-  text-transform: uppercase;
-  letter-spacing: 2px;
+  text-transform: capitalize;
   position: relative;
-  padding-bottom: 10px;
 }
 
 .section-title::after {
@@ -759,7 +839,6 @@ nav ul li a:hover {
   left: 0;
 }
 
-
 .section-title::after {
   content: '';
   animation: blink .7s infinite;
@@ -768,18 +847,9 @@ nav ul li a:hover {
   50% { opacity: 0; }
 }
 
-@keyframes glow {
-    from {
-        text-shadow: 0 0 5px rgb(195, 0, 255), 0 0 10px rgb(255, 0, 191), 0 0 15px rgb(255, 0, 119);
-    }
-    to {
-        text-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 30px #0ff;
-    }
-}
-
 /*services*/
  .services-section {
-      padding: 80px 0;
+      padding: 30px 0;
       overflow: hidden;
     }
 
@@ -787,7 +857,7 @@ nav ul li a:hover {
       text-align: center;
       padding: 20px;
       border-radius: 1%;
-      background: linear-gradient(145deg, #010529d3 , #076A91);
+      background: linear-gradient(45deg, #050430 , #050536);
       box-shadow: 1px 1px  10px rgb(255, 255, 255);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       height: 100%;
@@ -795,7 +865,6 @@ nav ul li a:hover {
 
     .service-item:hover {
       transform: translateY(-10px);
-      box-shadow: 0 12px 40px 0 rgba(0, 188, 212, 0.3);
     }
 
     .service-icon {
@@ -865,12 +934,11 @@ nav ul li a:hover {
     left: 0;
 }
 
-
 /*why choose us */
 
 .why-choose-us-section {
-  padding: 80px 0;
-  background-color: #00fa0063;
+  padding: 30px 0;
+  background-color: #ffffffc0;
 }
 
 .value-props {
@@ -881,7 +949,7 @@ nav ul li a:hover {
 }
 
 .value-prop {
-  background: rgba(0, 255, 255, 0.1);
+  background: rgba(102, 97, 97, 0.658);
   border: 2px solid #0ff;
   text-align: center;
   padding: 8px;
@@ -897,7 +965,7 @@ nav ul li a:hover {
 
 .value-prop i {
   font-size: 2.5rem;
-  color: var(--accents-color);
+  color: var(--accent-color);
   border: solid 2px #00f2ff;
   text-shadow: 2px 3px 4px rgb(0, 0, 0);
   padding: 1rem;
@@ -927,30 +995,21 @@ nav ul li a:hover {
   font-size: 1.1rem;
   line-height: 1.6;
 }
-
 .cta-message {
+  width: 100%;
   text-align: center;
-  margin-top: 20px;
-  padding: 10px;
-  background-color: #007bff7c;
-  color: #fff;
-  border-radius: 10px;
+  padding: 5px;
+  background-color: #050430;
+  border-radius: 1%;
 }
-
 .cta-message h3 {
-  font-size: 2rem;
-  margin-bottom: 2px;
-  text-shadow: 5px 5px 3px #000;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin: 0 0 10px 0;
+  font-size: 1.2rem;
 }
-
 .cta-message p {
-  font-size: 1.1rem;
-  margin-bottom: 30px;
-  font-family: monospace;
+  margin: 0 0 15px 0;
+  font-size: 0.9rem;
 }
-
-
 /*storyboard*/
 
 .success-stories-section {
@@ -1103,133 +1162,6 @@ nav ul li a:hover {
   padding: 20px;
   min-height: 100px;
   transition: background-color 0.3s;
-}
-
-/* Team Spotlight Styles */
-
-.team-spotlight-section {
-  background-color: #076a9181;
-  padding: 2rem ;
-}
-
-
-.team-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-}
-
-.team-member {
-  background-color: var(--card-background);
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.788);
-  transition: var(--transition);
-}
-
-.team-member:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-}
-
-.member-image {
-  position: relative;
-  overflow: hidden;
-}
-
-.member-image img {
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
-  transition: var(--transition);
-}
-
-.member-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(219, 52, 177, 0.9);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  opacity: 0;
-  transition: var(--transition);
-}
-
-.team-member:hover .member-overlay {
-  opacity: 1;
-}
-
-.team-member:hover .member-image img {
-  transform: scale(1.1);
-}
-
-.member-quote {
-  color: var(--text-color);
-  text-align: center;
-  padding: 0 1rem;
-  font-style: italic;
-  margin-bottom: 1rem;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  font-size: 1.05rem;
-}
-.member-social {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 1rem;
-  gap: 20px;
-}
-.social-link {
-  color: var(--text-color);
-  font-size: 1.5rem;
-  transition: var(--transition);
-}
-
-.social-link:hover {
-  transform: scale(1.2);
-  color: var(--primary-color);
-}
-
-.member-info {
-  padding: 1.5rem;
-  text-align: center;
-}
-
-.member-info h3 {
-  margin: 0;
-  font-size: 1.25rem;
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  color: var(--text-color);
-}
-
-.member-info p {
-  margin: 0.5rem;
-  font-size: 1rem;
-}
-
-
-@media (max-width: 768px) {
-  .section-title {
-    font-size: 20px;
-    text-align: center;
-  }
-
-  .team-grid {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  }
-}
-
-@media (max-width: 480px) {
-  .team-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .team-cta h3 {
-    font-size: 1.75rem;
-  }
 }
 
 /* Tech Insights Styles */
@@ -1418,96 +1350,49 @@ nav ul li a:hover {
 
 }
 
-/* contact */
 
-.contact-us-section {
+/* FAQ */
+.faq-section {
   background-image: url('contact.jpg');
   background-size: cover;
   background-position: center center; 
   background-attachment: fixed;
-  font: 16px 'Courier New', monospace;
-  padding: 20px;
-}
-
-.contact-content {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-.contact-info, .contact-form {
-  flex: 1 300px;
-  background: #111111a2;
-  border: 1px solid var(--primary-color);
-  padding: 15px;
-  border-radius: 8px;
-}
-.contact-info p {
-  margin: 10px 0;
-}
-.contact-form input, .contact-form select, .contact-form textarea {
-  width: 95%;
-  padding: 8px;
-  margin: 5px 0;
-  background: #000;
-  border: 1px solid var(--accents-color);
-  color: #0f0;
-}
-
-@media (max-width: 600px) {
-  .contact-content {
-      flex-direction: column;
-  }
-
-}
-
-/* FAQ */
-
-.faq-section {
-  padding: 1rem;
-  font: 12px 'Courier New', monospace;
-  background: rgba(30, 35, 82, 0.616);
+  padding: 0.5rem;
+  font-size: 0.875rem;
+  margin: 0 auto;
 }
 
 .faq-item {
-  background-color: rgb(0, 255, 191);
-  border-radius: 8px;
-  color: #000;
-  margin-bottom: 1rem;
-  box-shadow: -5px -5px 5px rgb(5, 226, 97);
-  overflow: hidden;
+  background: rgb(5, 19, 99);
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+  box-shadow: -3px -3px 3px rgb(29, 36, 128);
 }
-.question {
-  padding: 1rem;
+
+summary {
+  padding: 0.5rem;
   cursor: pointer;
-  display: flex;;
-  justify-content: space-between;
-  align-items: center;
-  font: 1.5em sans-serif;
-  color: #000;
+  font-weight: bold;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+summary::after {
+  content: '+';
+  float: right;
+}
+
+details[open] summary::after {
+  content: '-';
+}
+
+.faq-item p {
   margin: 0;
-}
-.question::after {
-  content: '\f078';
-  font-family: 'Font Awesome 5 Free';
-  font-weight: 900;
-  color: #000;
-  transition: transform 0.3s ease;
-}
-.faq-item.active .question::after {
-  transform: rotate(180deg);
-}
-.answer {
-  max-height: 0;
-  overflow: hidden;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  transition: max-height 0.3s ease;
-  padding: 0 1rem;
-  font-size: 1.5em;
-}
-.faq-item.active .answer {
-  max-height: 500px;
-  padding: 1rem;
-  margin-top: -25px;
+  padding: 0.5rem;
+  font-size: 0.875rem;
+  border-top: 1px solid rgba(153, 146, 146, 0.699);
 }
 
 /*subscribe*/
@@ -1517,7 +1402,7 @@ nav ul li a:hover {
   bottom: -100%;
   right: 20px;
   width: 300px;
-  background: linear-gradient(135deg, #07cf8d9d 0%, #005effc0 100%);
+  background: linear-gradient(135deg, #0f2566 0%, #12035e 100%);
   color: #fff;
   border-radius: 10px;
   box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
@@ -1571,11 +1456,12 @@ nav ul li a:hover {
 
 #newsletter-form input {
   flex-grow: 1;
-  padding: 10px;
+  padding: 2px;
   border: none;
-  border-radius: 30px 0 0 30px;
+  border-radius: 20px 0 0 20px;
   font-size: 1em;
   outline: none;
+  height: 50px;
 }
 
 .subbtn {
@@ -1584,8 +1470,9 @@ nav ul li a:hover {
   font-family: cursive;
   font-weight: bolder;
   border: none;
+  height: 50px;
   padding: 10px;
-  border-radius: 0 30px 30px 0;
+  border-radius: 0 20px 20px 0;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
@@ -1639,7 +1526,7 @@ nav ul li a:hover {
 
 @media (max-width: 600px) {
   .newsletter-notification {
-    width: 90%;
+    width: 70%;
     right: 5%;
     left: 5%;
   }
@@ -1650,8 +1537,8 @@ nav ul li a:hover {
   
   #newsletter-form input,
   .subbtn {
-    width: 100%;
-    border-radius: 30px;
+    width: 90%;
+    border-radius: 10px;
     margin-bottom: 10px;
   }
 }
@@ -1659,9 +1546,9 @@ nav ul li a:hover {
 /*footer*/
 
 .main-footer {
-  background: linear-gradient(45deg, #1a1a2e, #16213e);
+  background: linear-gradient(45deg, #10101d, #16213e);
   color: #e94560;
-  padding: 3rem 0 1rem;
+  padding: 1rem 0;
   font-family: 'Poppins', sans-serif;
 }
 
