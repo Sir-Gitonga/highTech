@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>NetiXpress Login</title>
+<style>
+  body {
+    background: #0a2540;
+    color: #e0f0ff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0; padding: 0;
+    display: flex; justify-content: center; align-items: center;
+    height: 100vh;
+  }
+  .login-container {
+    background: #112d54;
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px #1e3c72;
+    width: 320px;
+    text-align: center;
+  }
+  .logo {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+    color: #00cfff;
+  }
+  .logo span {
+    color: #ffc107;
+  }
+  .welcome-msg {
+    font-size: 1rem;
+    margin-bottom: 25px;
+    color: #a9c8ff;
+  }
+  input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 12px 10px;
+    margin: 10px 0 20px 0;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+  }
+  button {
+    background: #00cfff;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    font-size: 1.1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 700;
+    color: #0a2540;
+    transition: background 0.3s ease;
+  }
+  button:hover {
+    background: #00a0cc;
+  }
+  .info-text {
+    font-size: 0.85rem;
+    margin-top: 15px;
+    color: #a9c8ff;
+  }
+  .footer {
+    margin-top: 30px;
+    font-size: 0.8rem;
+    color: #5789c8;
+  }
+</style>
+</head>
+<body>
+
+<div class="login-container">
+  <div class="logo">Neti<span>Xpress</span></div>
+  <div class="welcome-msg">Welcome to NetiXpress — Fast, Reliable Internet for Everyone</div>
+
+  <form>
+    <input type="text" placeholder="Enter Voucher Code" required />
+    <button type="submit">Connect</button>
+  </form>
+
+  <div class="info-text">
+    Buy vouchers via M-PESA Paybill: 123456<br />
+    Use your voucher code above to connect<br />
+    Need help? Call 0700 000 000
+  </div>
+
+  <div class="footer">Browse More, Spend Less</div>
+</div>
+
+</body>
+</html>
